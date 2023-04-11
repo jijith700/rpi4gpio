@@ -1,0 +1,12 @@
+type hal_rpi4gpio_demo, domain;
+type hal_rpi4gpio_demo_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_rpi4gpio_demo);
+
+hal_server_domain(hal_rpi4gpio_demo, hal_vehicle)
+
+# allow hal_rpi4gpio_demo file:chr_file {open read write}
+# allow hal_rpi4gpio_demo sysfs:file {open read write}
+
+# For changing VHAL property via System Property 
+get_prop(hal_rpi4gpio_demo, debug_prop)

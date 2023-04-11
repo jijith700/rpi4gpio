@@ -1,0 +1,18 @@
+package vendor.demo.rpi4gpio@1.0;
+
+import IRpi4gpioCallback;
+
+interface IRpi4gpio {
+
+  //get led status 
+  get() generates (LedStatus result);  
+  
+  //set led status 
+  set(LedStatus  val) generates(int32_t  ret);
+  on() ;
+  off() ;
+
+  //register callback interface
+  registerCallback(IRpi4gpioCallback cb);
+
+};
